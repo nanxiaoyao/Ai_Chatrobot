@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autochat</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+    <body>
+    <!-- 对话框容器 -->
+    <div id="chat-container">
+        <div id="chat-box">
+            <!-- AI头像 -->
+            <div id="ai-avatar">
+            <img src="image/bot.png" alt="bot头像">
+            </div>
+        
+            <!-- 对话框 -->
+            <div id="messages"></div>
+        
+            <!-- 用户头像 -->
+            <div id="user-avatar">
+            <img src="image/user.png" alt="用户头像">
+            </div>
+        </div>
+        </div>
+
+    <!-- 输入框和模型选择 -->
+    <div  class="select_container">
+    <label for="model-select">选择模型：</label>
+    <select  class="select_wrap"   name="model" title="模型选择"  id="model-select" onchange="selectModel(this.value)">
+        <option value="ali">通义千问</option>
+        <option value="baidu">文心一言</option>
+
+    </select>
+    <input type="text" id="user-input" placeholder="输入消息...">
+    <button onclick="sendMessage()">发送消息</button>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

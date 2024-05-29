@@ -1,0 +1,179 @@
+body {
+    background-image: url('image/back.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 850px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+#ai-avatar{
+    order: 3; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#user-avatar{
+    order: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    align-self: flex-end;
+}
+#ai-avatar img, #user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 消息容器 */
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+/* 消息样式 */
+.message {
+    display: flex;
+    align-items: center;
+    margin: 5px; /* 调整为合适的大小 */
+}
+
+/* 头像样式 */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative; /* 用于定位 */
+}
+
+.avatar img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* 消息文本样式 */
+.message-text {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+/* AI消息样式 */
+.ai-message .message-text {
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+
+/* 用户消息样式 */
+.user-message {
+    display: flex; /* 确保消息是flex容器 */
+    align-items: flex-end; /* 确保所有子元素在容器底部对齐 */
+    justify-content: flex-end; /* 确保消息整体在容器右侧 */
+    margin-left: auto; /* 保持消息在容器左侧的自动边距 */
+}
+
+.user-message .avatar {
+    order: 1; /* 将头像移动到消息的开始位置 */
+    margin-right: 10px; /* 在头像和消息文本之间添加一些空间 */
+}
+
+.user-message .message-text {
+    background-color: #95ec69; /* 用户消息的背景颜色 */
+    color: #000000; /* 文本颜色 */
+    margin-right: 0; /* 移除右侧边距 */
+    margin-left: auto; /* 将文本推到右侧 */
+}
+
+#user-input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ededed;
+    transition: border-color 0.3s ease;
+}
+#user-input:focus {
+    outline: none;
+    border-color: rgba(255, 85, 0, 0.5);
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0080ff;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ededed;
+}
+
+#chat-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-message {
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.user-message {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.select_container {
+    /*position: relative;*/
+    /*display: inline-block;*/
+    display: flex;        /* 使用Flexbox布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center;    /* 垂直居中 */
+    gap: 10px;             /* 元素之间的间距 */
+    margin: auto;          /* 确保容器在页面中自动边距 */
+    max-width: 470px;      /* 容器的最大宽度，可根据需要调整 */
+    padding: 20px;         /* 容器的内边距，提供一些空间 */
+}
+
+.select_container .model-select-label {
+    padding: 10px 15px; /* 根据实际情况调整内边距，以匹配按钮大小 */
+    border-radius: 20px;
+    background-color: #0080ff;
+    color: #ededed;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+    margin-right: 10px; /* 为选择框留出一些空间 */
+}
+
+.select_container .model-select-label:hover {
+    background-color: #0080ff;
+}
+
